@@ -40,6 +40,13 @@
     }}
   {{/form-field}}
 
+  {{#form-field for="notify" label="Email me about weekly top posts"}}
+    {{label-switch
+      checked=(mut model.notifyTopPosts)
+      bgColorClass="colorable-bg-35"
+    }}
+  {{/form-field}}
+
   {{#unless forOnboarding}}
     <br>
     {{input type="submit" value="Save"}}

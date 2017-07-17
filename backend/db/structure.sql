@@ -255,7 +255,8 @@ CREATE TABLE profiles (
     beta_tester boolean DEFAULT false,
     notify boolean DEFAULT true,
     notify_token character varying,
-    slug_name character varying
+    slug_name character varying,
+    notify_top_posts boolean DEFAULT true
 );
 
 
@@ -1387,4 +1388,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170508151200');
 INSERT INTO schema_migrations (version) VALUES ('20170509114220');
 
 INSERT INTO schema_migrations (version) VALUES ('20170612160120');
+
+INSERT INTO schema_migrations (version) VALUES ('20170717153650');
 
