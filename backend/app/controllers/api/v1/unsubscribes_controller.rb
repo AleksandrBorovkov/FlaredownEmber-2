@@ -3,7 +3,8 @@ class Api::V1::UnsubscribesController < ApplicationController
 
   def update
     profile = Profile.find_by(notify_token: activation_params[:notify_token])
-    profile&.update_attributes(notify: false)
+    attribute = activation_params[:notify_top_posts] ? "notify_top_posts" : "notify"
+    profile&.update_attributes(attribute.to_sym => false)
 
     head :ok
   end
@@ -11,6 +12,6 @@ class Api::V1::UnsubscribesController < ApplicationController
   private
 
   def activation_params
-    params.permit(:notify_token)
+    params.permit(:notify_token, :notify_top_posts)
   end
 end

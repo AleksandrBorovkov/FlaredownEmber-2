@@ -13,7 +13,8 @@ export default Route.extend({
     var notify_token = transition.params.unsubscribe.notify_token;
 
     get(this, 'ajax').request(`/unsubscribe/${ notify_token }`, {
-      type: 'GET'
+      type: 'GET',
+      data: transition.queryParams,
     });
   }
 });
